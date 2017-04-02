@@ -1,0 +1,21 @@
+//--------------------------------------------------------------
+// HEADER
+//--------------------------------------------------------------
+.header {
+
+	&--site {
+		align-items: center;
+		border-bottom: 1px solid $color-border;
+		display: flex;
+		height: 100px;
+		padding: 0 20px;
+	}
+
+	&__brand {
+		min-width: 175px;
+	}
+
+	&__menu {
+		width: 100%;
+	}
+}

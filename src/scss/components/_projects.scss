@@ -1,0 +1,71 @@
+//--------------------------------------------------------------
+// PROJECTS
+//--------------------------------------------------------------
+$number-of-projects: 9 !default;
+.projects {
+	display: flex;
+
+	.project__trigger {
+		display: none;
+	}
+
+	.project__label {
+		align-items: center;
+		display: flex;
+		border: 1px solid $color-border;
+		height: 40px;
+		width: 100%;
+
+		@media screen and (min-width: $tablet) {
+			display: none;
+		}
+	}
+
+	.project,
+	.projects__tabs {
+		display: none;
+	}
+
+	.projects__tabs {
+
+
+
+		@media screen and (min-width: $tablet) {
+			display: flex;
+			flex: 1 1 200px;
+			//min-width: 200px;
+		}
+	}
+
+	.projects__tabs--menu {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.projects__tabs--menu-item {
+		border: 1px solid $color-border;
+		margin-bottom: 5px;
+		padding: 10px 20px;
+		text-align: center;
+		width: 100%;
+	}
+
+	@for $i from 1 through $number-of-projects {
+		#project-r-#{$i} {
+
+			&:checked {
+
+				~ .projects__container > .project-#{$i} {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.projects__container {
+		border: 1px solid $color-border;
+		margin-left: 20px;
+		width: 100%;
+	}
+}

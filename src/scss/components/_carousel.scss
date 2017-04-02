@@ -1,0 +1,118 @@
+//--------------------------------------------------------------
+// CAROUSEL
+//--------------------------------------------------------------
+.carousel {
+	overflow: hidden;
+	margin: 0 auto 20px;
+	position: relative;
+	width: 500px;
+
+	input[type=radio] {
+		display: none;
+	}
+
+	> img,
+	> label {
+		display: none;
+	}
+
+	img {
+		transition: all 0.5s;
+	}
+
+	> label {
+		height: 30px;
+		position: absolute;
+		top: 45%;
+		width: 30px;
+	}
+
+	.carousel__images {
+		background-color: #000;
+		border-radius: 5px;
+		height: 350px;
+		margin-top: 20px;
+		transition: transform 0.5s ease 0s;
+
+		> img {
+			position: absolute;
+			top: 0;
+		}
+
+		> img:nth-of-type(1) {
+			transform: translateX(0%);
+			opacity: 0.5;
+		}
+
+		> img:nth-of-type(2) {
+			transform: translateX(100%);
+			opacity: 0.5;
+		}
+
+		> img:nth-of-type(3) {
+			transform: translateX(200%);
+			opacity: 0.5;
+		}
+	}
+
+	.carousel__dots {
+		bottom: 5px;
+		position: absolute;
+		text-align: center;
+		width: 786px;
+		z-index: 5;
+	}
+
+	.carousel__dot {
+		background-color: rgba(255, 255, 255, 0.5);
+		border-radius: 50%;
+		display: inline-block;
+		height: 15px;
+		list-style-type: none;
+		margin: 0 5px;
+		width: 15px;
+	}
+
+	.ui_carousel-large > label {
+		height: 30px;
+		position: absolute;
+		top: 52.5%;
+		width: 30px; }
+
+	input[type=radio]:nth-of-type(1):checked ~ label:nth-of-type(3),
+	input[type=radio]:nth-of-type(2):checked ~ label:nth-of-type(1),
+	input[type=radio]:nth-of-type(3):checked ~ label:nth-of-type(2) {
+		background: blue;
+		display: block;
+		left: 10px;
+		z-index: 5; }
+
+	input[type=radio]:nth-of-type(1):checked ~ label:nth-of-type(2),
+	input[type=radio]:nth-of-type(2):checked ~ label:nth-of-type(3),
+	input[type=radio]:nth-of-type(3):checked ~ label:nth-of-type(1) {
+		background: red;
+		display: block;
+		right: 10px;
+		z-index: 4; }
+
+	input[type=radio]:nth-of-type(1):checked ~ .carousel__dots .carousel__dot:nth-of-type(1),
+	input[type=radio]:nth-of-type(2):checked ~ .carousel__dots .carousel__dot:nth-of-type(2),
+	input[type=radio]:nth-of-type(3):checked ~ .carousel__dots .carousel__dot:nth-of-type(3) {
+		background-color: rgba(255, 255, 255, 0.75); }
+
+	input[type=radio]:nth-of-type(1):checked ~ .carousel__images {
+		transform: translateX(0%); }
+
+	input[type=radio]:nth-of-type(2):checked ~ .carousel__images {
+		transform: translateX(-100%);
+		top: 0; }
+
+	input[type=radio]:nth-of-type(3):checked ~ .carousel__images {
+		transform: translateX(-200%);
+		top: 0; }
+
+	input[type=radio]:nth-of-type(1):checked ~ .carousel__images img:nth-of-type(1),
+	input[type=radio]:nth-of-type(2):checked ~ .carousel__images img:nth-of-type(2),
+	input[type=radio]:nth-of-type(3):checked ~ .carousel__images img:nth-of-type(3) {
+		opacity: 1; }
+}

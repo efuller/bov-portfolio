@@ -1,0 +1,63 @@
+//--------------------------------------------------------------
+// MENUS
+//--------------------------------------------------------------
+.header__menu {
+	margin: 0;
+	padding: 0;
+
+	#menu__trigger {
+		display: none;
+	}
+
+	.menu__trigger--label {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		height: 25px;
+		width: 25px;
+		z-index: 11;
+
+		@media screen and (min-width: $desktop) {
+			display: none;
+		}
+	}
+
+	&--container {
+		background: white;
+		transition: transform 0.3s ease-out;
+
+		@media screen and (max-width: $desktop) {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			height: 100%;
+			left: 0;
+			width: 100%;
+			z-index: 10;
+			transform: translateX(-100%);
+		}
+	}
+
+	#menu__trigger:checked ~ .menu__trigger--label ~ &--container {
+		transform: translateX(0%);
+	}
+
+	&--horizontal {
+
+		@media screen and (min-width: $desktop) {
+			align-items: center;
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+
+	.header__menu--search {
+		min-width: 175px;
+
+		#search__trigger:checked ~ .modal {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}

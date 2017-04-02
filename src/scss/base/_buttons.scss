@@ -1,0 +1,67 @@
+//--------------------------------------------------------------
+// BUTTONS
+//--------------------------------------------------------------
+
+//--------------------------------------------------------------
+// BUTTON RESETS
+//--------------------------------------------------------------
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+a.button,
+.button {
+	-webkit-appearance: none;
+	background: none;
+	border: none;
+	display: inline-block;
+	outline: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+//--------------------------------------------------------------
+// BASE
+//--------------------------------------------------------------
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+a.button,
+.button {
+	border-radius: 2px;
+	cursor: pointer;
+	font-family: $font-main;
+	font-size: 1em;
+	letter-spacing: 1px;
+	padding: 10px 16px;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease-out;
+
+	&:visited {
+
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+
+	}
+}
+
+//--------------------------------------------------------------
+// BUTTON VARIATIONS
+//--------------------------------------------------------------
+.button {
+	&--small {
+
+	}
+
+	&--medium {
+
+	}
+
+	&--large {
+
+	}
+}
