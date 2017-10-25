@@ -1,0 +1,47 @@
+//--------------------------------------------------------------
+// Sidebar
+//--------------------------------------------------------------
+.sidebar {
+	animation: myFadeIn 1s 0.5s 1 normal forwards;
+	background: $color-shade-black;
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	padding: 20px;
+
+	.fa {
+		color: $color-white;
+		font-size: 30px;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $color-border;
+		}
+	}
+
+	a {
+		margin-bottom: 10px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.trigger {
+		cursor: pointer;
+		display: none;
+	}
+
+	&--mobile {
+		padding-top: 50px;
+		position: fixed;
+		left: 0;
+		transition: transform 0.3s 0.2s ease-in;
+
+		.trigger {
+			display: block;
+			position: absolute;
+			top: 5px;
+		}
+	}
+}
