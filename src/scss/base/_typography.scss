@@ -22,5 +22,25 @@ h6 {
 
 h1,
 .h1 {
-	font-size: 2em;
+	font-size: 4.3em;
+}
+
+h2,
+.h2 {
+	font-size: 3.125em;
+}
+
+p {
+	margin-bottom: 24px;
+}
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
 }

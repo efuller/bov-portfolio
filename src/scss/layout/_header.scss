@@ -5,14 +5,37 @@
 
 	&--site {
 		align-items: center;
+		background: $color-shade-black;
 		border-bottom: 1px solid $color-border;
 		display: flex;
 		height: 100px;
 		padding: 0 20px;
+		position: fixed;
+		width: 100%;
+		z-index: 10;
+
+		a {
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: lighten($color-font-gray, 20%);
+			}
+		}
 	}
 
 	&__brand {
+		color: $color-white;
 		min-width: 175px;
+
+		a {
+			color: $color-white;
+			text-decoration: none;
+		}
+
+		h1 {
+			font-size: 2em;
+		}
 	}
 
 	&__menu {
