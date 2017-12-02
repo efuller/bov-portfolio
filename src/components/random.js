@@ -23,7 +23,7 @@ export default (function() {
     }
 
 	function generateNewFact() {
-	    const API_URL = `http://numbersapi.com/${generateRandomNumber()}`;
+	    const API_URL = `//numbersapi.com/${generateRandomNumber()}`;
 
         const xhr = new XMLHttpRequest();
 	    xhr.open('GET', API_URL);
