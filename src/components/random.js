@@ -19,23 +19,24 @@ export default (function() {
 	}
 
 	function generateRandomNumber() {
-	    return Math.floor(Math.random() * 200);
+	    return Math.floor(Math.random() * 25);
     }
 
 	function generateNewFact() {
-	    const API_URL = `//numbersapi.com/${generateRandomNumber()}`;
+	    const API_URL = `https://swapi.co/api/people/${generateRandomNumber()}`;
 
         const xhr = new XMLHttpRequest();
 	    xhr.open('GET', API_URL);
 	    xhr.onload = function() {
-	        const response = xhr.response;
+	        const response = JSON.parse(xhr.response);
 
 	        if (xhr.status === 200) {
-	            DOM.randomFact.innerHTML = response;
+	            DOM.randomFact.innerHTML = response.name;
             } else {
 	            DOM.randomFact.innerHTML = 'Oops! Looks like something when wrong!';
             }
         };
+	    xhr.setRequestHeader('Accept', 'application/json');
         xhr.send();
     }
 
