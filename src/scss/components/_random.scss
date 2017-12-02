@@ -1,0 +1,17 @@
+//--------------------------------------------------------------
+// Random Facts
+//--------------------------------------------------------------
+.section__random {
+  text-align: center;
+
+  button {
+    background: $color-shade-black;
+    color: $color-font-gray;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: lighten($color-shade-black, 15%);
+    }
+  }
+}

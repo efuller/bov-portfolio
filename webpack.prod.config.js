@@ -76,7 +76,7 @@ const config = {
 			root: __dirname,
 			verbose: true,
 			dry: false,
-			exclude: ['index.html', 'vendor']
+			exclude: ['index.html', 'vendor', 'images']
 		})
 	],
 };
