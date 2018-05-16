@@ -1,6 +1,17 @@
 {
-  "extends": "airbnb/legacy",
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
   "rules": {
-    "func-names": ["error", "never"]
+    "no-tabs": 0,
+    "indent": ["error", "tab"]
   }
 }
