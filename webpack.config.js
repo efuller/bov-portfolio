@@ -15,6 +15,7 @@ const autoprefixer = require('autoprefixer');
  * Webpack config object.
  */
 const config = {
+	mode: 'development',
 	// The entry point of our app. Where our dependency graph starts.
 	entry: [
 		path.resolve(__dirname, 'src/scss/index.scss' ),
