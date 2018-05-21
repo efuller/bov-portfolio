@@ -1,0 +1,27 @@
+//--------------------------------------------------------------
+// Main Content
+//--------------------------------------------------------------
+.page {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  min-height: 500px;
+
+  &__left,
+  &__right {
+    width: 50%;
+  }
+
+  &__left {
+    background: url('../../assets/images/profile-pic.jpg');
+  }
+
+  &__right {
+    padding: 30px;
+    text-align: center;
+  }
+}
