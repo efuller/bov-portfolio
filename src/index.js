@@ -11,47 +11,7 @@ https://www.ynonperek.com/2017/08/24/vanilla-single-page-router-architecture/
 http://krasimirtsonev.com/blog/article/deep-dive-into-client-side-routing-navigo-pushstate-hash
 http://read.humanjavascript.com/ch09-clientside-routing.html
  */
-
-class Router {
-
-	constructor() {
-		this.routes = [];
-		this.bindEvents();
-	}
-
-	bindEvents() {
-		window.addEventListener('hashchange', () => {
-			const hash = location.hash;
-		});
-	}
-
-	matchRoute(hash) {
-		if (hash === '#') {
-			const validRoute = this.routes.filter(route => route.name === '#');
-			this.loadRoute(validRoute[0]);
-			return;
-		}
-
-        const matchRoute = this.routes.filter(route => route.name === hash.replace('#', ''));
-		if (matchRoute.length > 0) {
-			this.loadRoute(matchRoute[0]);
-		}
-	}
-
-    loadRoute(route) {
-        route.cb();
-    }
-
-	register(route, cb) {
-		const newRoute = {
-			name: route,
-			cb,
-		}
-
-		this.routes.push(newRoute);
-	}
-}
-
+import Router from './components/Router';
 const controller = {
 	home() {
 		console.log('home route');
@@ -69,10 +29,10 @@ const controller = {
 
 
 window.onload = function () {
-	// const router = new Router();
-	// router.register('#', controller.home);
-	// router.register('projects', controller.projects);
-	// router.matchRoute('#');
+	const router = new Router();
+	router.register('#', controller.home);
+	router.register('#projects', controller.projects);
+	router.load();
 };
 
 if (module.hot) {
