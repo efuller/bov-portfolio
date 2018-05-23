@@ -2,8 +2,10 @@
 // Main Content
 //--------------------------------------------------------------
 .app {
+  animation: fadeIn 1s 0.3s forwards;
   margin: 50px auto 0;
   max-width: 900px;
+  opacity: 0;
   width: 100%;
 }
 
@@ -11,6 +13,7 @@
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
   display: flex;
   min-height: 500px;
+  animation: fadeOutIn 1s forwards;
 
   &__left,
   &__right {
