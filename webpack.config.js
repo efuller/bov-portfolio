@@ -9,7 +9,6 @@
  */
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 /**
  * Webpack config object.
@@ -25,17 +24,17 @@ const config = {
 	output: {
 		filename: 'assets/js/bundle.js',
 		path: path.resolve(__dirname, '/'),
-		publicPath: 'http://localhost:8080/'
+		publicPath: 'http://localhost:8080/',
 	},
 	context: path.resolve(__dirname, 'src'),
 	devServer: {
-		contentBase: path.join(__dirname, '/' ),
+		contentBase: path.join(__dirname, '/'),
 		hot: true,
 		publicPath: 'http://localhost:8080/',
-		inline: true
+		inline: true,
 	},
 	resolve: {
-		extensions: ['.js', '.scss']
+		extensions: ['.js', '.scss'],
 	},
 	// Loaders. These transform our code by running them through transpilers.
 	module: {
@@ -43,33 +42,44 @@ const config = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: "babel-loader",
+				loader: 'babel-loader',
 			},
 			{
 				test: /\.scss$/,
 				use: [{
-					loader: "style-loader" // creates style nodes from JS strings
+					loader: 'style-loader', // creates style nodes from JS strings
 				}, {
-					loader: "css-loader", options: {
-						sourceMap: true
-					} // translates CSS into CommonJS
+					loader: 'css-loader',
+					options: {
+						sourceMap: true,
+					}, // translates CSS into CommonJS
 				}, {
-					loader: "sass-loader", options: {
-						sourceMap: true
-					} // compiles Sass to CSS
-				}]
+					loader: 'sass-loader',
+					options: {
+						sourceMap: true,
+					}, // compiles Sass to CSS
+				}],
 			},
 			{
 				test: /\.(png|jpg|svg)$/,
 				loader: 'file-loader',
-			}
-		]
+			},
+			{
+				test: /\.hbs$/,
+				loader: 'handlebars-loader',
+				query: {
+					partialDirs: [
+						path.join(__dirname, './src/views', 'partials'),
+					],
+				},
+			},
+		],
 	},
 	// Webpack plugins - These are like addons that can provide additional functionality.
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoEmitOnErrorsPlugin(),
-		new webpack.NamedModulesPlugin()
+		new webpack.NamedModulesPlugin(),
 	],
 };
 

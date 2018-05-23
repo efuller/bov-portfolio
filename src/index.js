@@ -12,18 +12,39 @@ http://krasimirtsonev.com/blog/article/deep-dive-into-client-side-routing-navigo
 http://read.humanjavascript.com/ch09-clientside-routing.html
  */
 import Router from './components/Router';
+import Home from './views/home.hbs';
+import Projects from './views/projects.hbs';
+import Tech from './views/tech.hbs';
+import Articles from './views/articles.hbs';
+
 const controller = {
 	home() {
-		console.log('home route');
+		const app = document.querySelector('.app');
+		app.innerHTML = '';
+		const el = document.createElement('div');
+		el.innerHTML = Home();
+		app.appendChild(el);
 	},
 	projects() {
-		console.log('projects', this);
+		const app = document.querySelector('.app');
+		app.innerHTML = '';
+		const el = document.createElement('div');
+		el.innerHTML = Projects();
+		app.appendChild(el);
 	},
-	skills() {
-		console.log('skills');
+	tech() {
+		const app = document.querySelector('.app');
+		app.innerHTML = '';
+		const el = document.createElement('div');
+		el.innerHTML = Tech();
+		app.appendChild(el);
 	},
 	articles() {
-		console.log('articles');
+		const app = document.querySelector('.app');
+		app.innerHTML = '';
+		const el = document.createElement('div');
+		el.innerHTML = Articles();
+		app.appendChild(el);
 	},
 };
 
@@ -32,6 +53,8 @@ window.onload = function () {
 	const router = new Router();
 	router.register('#', controller.home);
 	router.register('#projects', controller.projects);
+	router.register('#tech', controller.tech);
+	router.register('#articles', controller.articles);
 	router.load();
 };
 
