@@ -74,3 +74,22 @@ test('load(): load the home route if there are no other matches', () => {
 	router.load('#something');
 	expect(cb).toHaveBeenCalledTimes(2);
 });
+
+test('active(): add a class of .active to the active menu item', () => {
+	const nav = `<nav class="navigation">
+		<ul class="navigation__list">
+		<li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
+		<li class="navigation__item"><a href="#projects" class="navigation__link">Projects</a></li>
+		</ul>
+		</nav>`;
+	document.body.innerHTML = nav;
+
+	const router = new Router();
+	router.register('#', () => {});
+	router.register('#projects', () => {});
+
+	const el = document.querySelector('a[href="#projects"]');
+	expect(el.classList.contains('active')).toBe(false);
+	router.active('#projects');
+	expect(el.classList.contains('active')).toBe(true);
+});

@@ -42,13 +42,25 @@ class Router {
 		// Load the # route as a fail safe.
 		if (matched) {
 			matched.cb();
+			this.active(matched.name);
 		} else {
 			home.cb();
+			this.active(home.name);
 		}
 	}
 
 	match(hash) {
 		return this.routes.find(route => route.name === hash);
+	}
+
+	active(hash) {
+		const navElements = document.querySelectorAll('a[href*="#"]');
+		navElements.forEach((el) => {
+			el.classList.remove('active');
+			if (el.getAttribute('href') === hash) {
+				el.classList.add('active');
+			}
+		});
 	}
 
 	register(route, cb) {
