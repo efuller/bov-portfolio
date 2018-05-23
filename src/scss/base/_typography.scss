@@ -2,6 +2,7 @@
 // Typography
 //--------------------------------------------------------------
 body {
+  color: $color-gray-med;
   font-family: $font-sans-alt;
   line-height: 1.3;
 }
@@ -9,6 +10,7 @@ body {
 @for $i from 1 through 6 {
   h#{$i},
   .h#{$i} {
+    color: $color-gray-dark;
     font-family: $font-sans;
   }
 }
@@ -17,4 +19,8 @@ body {
 h1 {
   font-size: 36px;
   font-weight: 700;
+}
+
+p {
+  margin: 0 0 18px 0;
 }

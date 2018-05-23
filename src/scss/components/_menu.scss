@@ -15,10 +15,30 @@
   }
 
   &__link {
+    color: #8e8e8e;
+    display: inline-block;
     text-decoration: none;
 
-    &.active {
-      color: goldenrod;
+    &:after {
+      content: '';
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &.active,
+    &:hover {
+      position: relative;
+
+      &:after {
+        background-color: #8e8e8e;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 1px;
+        opacity: 1;
+        position: absolute;
+        width: 100%;
+      }
     }
   }
 }
