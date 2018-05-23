@@ -2,8 +2,23 @@
 // Menu
 //--------------------------------------------------------------
 .navigation {
+  text-align: center;
 
   &__list {
     display: flex;
+    justify-content: center;
+    margin: 30px auto;
+  }
+
+  &__item {
+    margin-left: 30px;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &.active {
+      color: goldenrod;
+    }
   }
 }
