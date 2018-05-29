@@ -1,13 +1,12 @@
 import API from './API';
-import Router from './Router';
 import Home from '../views/home.hbs';
 import Projects from '../views/projects.hbs';
 import Articles from '../views/articles.hbs';
 
-const router = new Router();
+// const router = new Router();
 
 export default {
-	home() {
+	home(router) {
 		const app = document.querySelector('.app');
 		app.innerHTML = '';
 		const el = document.createElement('div');
@@ -19,7 +18,7 @@ export default {
 			router.active('#');
 		});
 	},
-	projects() {
+	projects(router) {
 		const app = document.querySelector('.app');
 		app.innerHTML = '';
 		const el = document.createElement('div');

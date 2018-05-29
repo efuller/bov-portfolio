@@ -41,9 +41,9 @@ class Router {
 
 		// Load the # route as a fail safe.
 		if (matched) {
-			matched.cb();
+			matched.cb(this);
 		} else {
-			home.cb();
+			home.cb(this);
 		}
 	}
 
