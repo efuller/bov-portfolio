@@ -42,10 +42,8 @@ class Router {
 		// Load the # route as a fail safe.
 		if (matched) {
 			matched.cb();
-			this.active(matched.name);
 		} else {
 			home.cb();
-			this.active(home.name);
 		}
 	}
 
@@ -54,7 +52,7 @@ class Router {
 	}
 
 	active(hash) {
-		const navElements = document.querySelectorAll('a[href*="#"]');
+		const navElements = document.querySelectorAll('.navigation a[href*="#"]');
 		navElements.forEach((el) => {
 			el.classList.remove('active');
 			if (el.getAttribute('href') === hash) {

@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 .app {
   animation: fadeIn 1s 0.3s forwards;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
   max-width: 900px;
   opacity: 0;
   width: 100%;
@@ -11,20 +11,21 @@
 
 .main {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
-  display: flex;
   min-height: 500px;
-  animation: fadeOutIn 1s forwards;
+  overflow: hidden;
+  animation: fadeIn 1s forwards;
 
   &__left,
   &__right {
+    min-height: 475px;
 	width: 50%;
   }
 
-  &__left {
-	background: url('../../assets/images/profile-pic.jpg');
-  }
-
   &__right {
-	padding: 30px;
+	padding: 0 30px 30px;
   }
+}
+
+.content-container {
+  display: flex;
 }

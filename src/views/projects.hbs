@@ -1,9 +1,20 @@
 {{> header}}
-<div class="content">
+<div class="content projects">
     <section class="main">
-        <div class="main__left"></div>
-        <div class="main__right">
-            <h1>Projects</h1>
+        <h1 class="title">Projects</h1>
+        <div class="content-container">
+            <div class="main__left">
+                <ul class="projects-menu">
+                    {{#each data}}
+                        {{> projectMenu}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="main__right">
+                {{#each data}}
+                    {{> panel}}
+                {{/each}}
+            </div>
         </div>
     </section>
 </div>

@@ -1,0 +1,22 @@
+{
+  "bio": "<p>Hi!</p><p>Welcome to my page that showcases some of the things I've been working on whileenrolled in the BOV Academy.</p><p>I am a front-end developer with a passion for learning new things.I intend on graduating from BOV Academy as a Fullstack Javscript Developer.</p><p>When I'm not coding, I enjoy the outdoors, traveling, and eating great food.</p>",
+  "projects": [
+    {
+      "name": "Puzzle",
+      "slug": "puzzle",
+      "url": "https://efuller.github.io/bov-projects/projects/drag-n-drop/index.html",
+      "image": "assets/images/puzzle.jpg",
+      "content": "This is a project that utilizes the drag-n-drop API. It was a lot of fun to code!",
+      "tech": "Vanilla JS / SCSS",
+      "active": "active"
+    },
+    {
+      "name": "Product Listing",
+      "slug": "product-listing",
+      "url": "https://efuller.github.io/bov-projects/projects/product-listing/index.html",
+      "image": "assets/images/products.jpg",
+      "content": "A basic product listing page with a shopping card and coupon codes!",
+      "tech": "Vanilla JS / SCSS"
+    }
+  ]
+}

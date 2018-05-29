@@ -1,0 +1,42 @@
+//--------------------------------------------------------------
+// Projects
+//--------------------------------------------------------------
+.projects {
+
+  .title {
+    text-align: center;
+  }
+
+  .main__left {
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  .main__right {
+    padding: 0;
+    position: relative;
+    width: 450px;
+  }
+
+  img {
+    margin-bottom: 15px;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .panel {
+    padding-bottom: 30px;
+    padding-right: 30px;
+    position: absolute;
+    opacity: 0;
+    transform: translateX(500px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s 0.3s ease-in-out;
+
+    &.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

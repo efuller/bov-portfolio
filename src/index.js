@@ -11,51 +11,35 @@ https://www.ynonperek.com/2017/08/24/vanilla-single-page-router-architecture/
 http://krasimirtsonev.com/blog/article/deep-dive-into-client-side-routing-navigo-pushstate-hash
 http://read.humanjavascript.com/ch09-clientside-routing.html
  */
-import Router from './components/Router';
-import Home from './views/home.hbs';
-import Projects from './views/projects.hbs';
-import Tech from './views/tech.hbs';
-import Articles from './views/articles.hbs';
+import Router from './js/Router';
+import controller from './js/Controller';
 
-const controller = {
-	home() {
-		const app = document.querySelector('.app');
-		app.innerHTML = '';
-		const el = document.createElement('div');
-		el.innerHTML = Home();
-		app.appendChild(el);
-	},
-	projects() {
-		const app = document.querySelector('.app');
-		app.innerHTML = '';
-		const el = document.createElement('div');
-		el.innerHTML = Projects();
-		app.appendChild(el);
-	},
-	tech() {
-		const app = document.querySelector('.app');
-		app.innerHTML = '';
-		const el = document.createElement('div');
-		el.innerHTML = Tech();
-		app.appendChild(el);
-	},
-	articles() {
-		const app = document.querySelector('.app');
-		app.innerHTML = '';
-		const el = document.createElement('div');
-		el.innerHTML = Articles();
-		app.appendChild(el);
-	},
-};
-
+const router = new Router();
 
 window.onload = function () {
-	const router = new Router();
 	router.register('#', controller.home);
 	router.register('#projects', controller.projects);
-	router.register('#tech', controller.tech);
 	router.register('#articles', controller.articles);
 	router.load();
+
+	const left = document.querySelector('.app');
+
+	left.addEventListener('click', (e) => {
+		if (!e.target.classList.contains('projects-menu__action')) {
+			return;
+		}
+
+		const { target } = e;
+		const btns = document.querySelectorAll('.projects-menu__action');
+		btns.forEach(btn => btn.classList.remove('active'));
+		target.classList.add('active');
+		const panel = target.getAttribute('data-panel');
+		const panels = document.querySelectorAll('.panel');
+		panels.forEach(item => item.classList.remove('active'));
+
+		const newActive = document.querySelector(`[data-name="${panel}"]`);
+		newActive.classList.add('active');
+	});
 };
 
 if (module.hot) {
