@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class API {
 	constructor() {
-		this.url = '../data.json';
+		this.url = 'data.json';
 	}
 
 	getBio() {

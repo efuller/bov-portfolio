@@ -5,7 +5,7 @@
       "name": "Puzzle",
       "slug": "puzzle",
       "url": "https://efuller.github.io/bov-projects/projects/drag-n-drop/index.html",
-      "image": "assets/images/puzzle.jpg",
+      "image": "/assets/images/puzzle.jpg",
       "content": "This is a project that utilizes the drag-n-drop API. It was a lot of fun to code!",
       "tech": "Vanilla JS / SCSS",
       "active": "active"
@@ -14,7 +14,7 @@
       "name": "Product Listing",
       "slug": "product-listing",
       "url": "https://efuller.github.io/bov-projects/projects/product-listing/index.html",
-      "image": "assets/images/products.jpg",
+      "image": "/assets/images/products.jpg",
       "content": "A basic product listing page with a shopping card and coupon codes!",
       "tech": "Vanilla JS / SCSS"
     }
