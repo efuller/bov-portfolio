@@ -36,11 +36,17 @@ export default {
 			btn.classList.add('active');
 		});
 	},
-	articles() {
+	articles(router) {
 		const app = document.querySelector('.app');
 		app.innerHTML = '';
 		const el = document.createElement('div');
-		el.innerHTML = Articles();
-		app.appendChild(el);
+
+		const data = API.getArticles();
+		data.then((articles) => {
+			console.log(articles);
+			el.innerHTML = Articles({ data: articles.slice(0, 3) });
+			app.appendChild(el);
+			router.active('#articles');
+		});
 	},
 };

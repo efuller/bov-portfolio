@@ -25,14 +25,17 @@ window.onload = function () {
 	const left = document.querySelector('.app');
 
 	left.addEventListener('click', (e) => {
-		if (!e.target.classList.contains('projects-menu__action')) {
+		const { target } = e;
+
+		if (!target.classList.contains('projects-menu__action')) {
 			return;
 		}
 
-		const { target } = e;
 		const btns = document.querySelectorAll('.projects-menu__action');
 		btns.forEach(btn => btn.classList.remove('active'));
+
 		target.classList.add('active');
+
 		const panel = target.getAttribute('data-panel');
 		const panels = document.querySelectorAll('.panel');
 		panels.forEach(item => item.classList.remove('active'));

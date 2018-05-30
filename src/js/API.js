@@ -20,6 +20,11 @@ class API {
 				return projects;
 			});
 	}
+
+	getArticles() {
+		return axios.get('http://ericfuller.net/wp-json/wp/v2/posts')
+			.then(res => res.data);
+	}
 }
 
 export default new API();
