@@ -22,13 +22,23 @@
     margin-bottom: 15px;
   }
 
-  p {
-    text-align: center;
+  h3 {
+    font-size: 24px;
+  }
+
+  .excerpt {
+    margin-top: 20px;
+
+    a {
+      display: block;
+      margin-top: 20px;
+    }
   }
 
   .post {
     padding-bottom: 30px;
     padding-right: 30px;
+    padding-top: 30px;
     position: absolute;
     opacity: 0;
     transform: translateX(500px);

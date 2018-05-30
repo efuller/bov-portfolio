@@ -27,11 +27,11 @@ window.onload = function () {
 	left.addEventListener('click', (e) => {
 		const { target } = e;
 
-		if (!target.classList.contains('projects-menu__action')) {
+		if (!target.classList.contains('left-menu__action')) {
 			return;
 		}
 
-		const btns = document.querySelectorAll('.projects-menu__action');
+		const btns = document.querySelectorAll('.left-menu__action');
 		btns.forEach(btn => btn.classList.remove('active'));
 
 		target.classList.add('active');

@@ -47,6 +47,11 @@ export default {
 			el.innerHTML = Articles({ data: articles.slice(0, 3) });
 			app.appendChild(el);
 			router.active('#articles');
+
+            const activePanel = document.querySelector('.panel.active');
+            const panel = activePanel.getAttribute('data-name');
+            const btn = document.querySelector(`[data-panel="${panel}"`);
+            btn.classList.add('active');
 		});
 	},
 };

@@ -50,9 +50,11 @@
 //--------------------------------------------------------------
 // Projects Menu
 //--------------------------------------------------------------
-.projects-menu {
+.left-menu {
+  display: inline-block;
 
   &__item {
     margin-bottom: 15px;
+    max-width: 315px;
   }
 }
